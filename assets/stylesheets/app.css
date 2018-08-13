@@ -1,0 +1,74 @@
+.details-panel, .content-panel {
+  padding-top: 20px;
+}
+
+.details-panel {
+  background-color: #333333;
+  color: white;
+  position: fixed;
+  height: 100%;
+}
+
+.details-panel a {
+  color: white;
+  text-decoration: underline;
+}
+
+.details-panel h1 {
+  margin-bottom: 20px;
+}
+
+.details-panel img {
+  margin-bottom: 20px;
+}
+
+.content-panel {
+  margin-left: 320px;
+}
+
+img {
+  width: 100%;
+}
+
+img.mini-img {
+  width: 50%;
+}
+
+.song-table {
+  margin-bottom: 30px;
+}
+
+.song-table td {
+  padding: 2px;
+  vertical-align: middle;
+}
+
+hr {
+  border-top: 2px solid #333333;
+}
+
+hr.thick {
+  border-top: 5px solid #333333;
+}
+
+.tile {
+  text-align: center;
+}
+
+.tile a {
+  color: black;
+  font-weight: bold;
+}
+
+.card {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+.invalid-feedback {
+  display: block;
+}

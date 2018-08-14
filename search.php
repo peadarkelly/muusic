@@ -1,4 +1,6 @@
 <?php
+  session_start();
+
   $searchTerm = $_GET['search'];
   $searchType = $_GET['search-type'];
 

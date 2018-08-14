@@ -32,13 +32,21 @@
 
     echo "  <hr/>";
 
-    echo "  <p>$email - <a href='logout.php'>Logout</a></p>";
+    echo "  <p>$email - " . handleAdmin() . "<a href='logout.php'>Logout</a></p>";
     echo "</div>";
   }
 
   function handleDefault($option) {
     if ($_GET['search-type'] === $option) {
       return "selected";
+    }
+
+    return "";
+  }
+
+  function handleAdmin() {
+    if ($_SESSION['isAdmin']) {
+      return "<a href='admin.php'>Admin</a> | ";
     }
 
     return "";

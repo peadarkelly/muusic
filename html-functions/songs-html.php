@@ -3,18 +3,19 @@
     echo "<table class='table song-table'>";
     echo "  <tbody>";
     echo "    <col width='10%'>";
-    echo "    <col width='80%'>";
-    echo "    <col width='10%'>";
+    echo "    <col width='70%'>";
+    echo "    <col width='20%'>";
 
     foreach ($songs as $song) {
-      $id = $song['song_id'];
+      $spotifyLink = $song['spotify_link'];
       $title = $song['title'];
       $thumbnail = __IMAGES__ . $song['thumbnail'];
+      $spotifyButton = __IMAGES__ . 'spotify.png';
 
       echo "    <tr>";
       echo "      <td><img src='$thumbnail' class='mini-img'/></td>";
       echo "      <td>$title</td>";
-      echo "      <td><a href='song.php?songId=$id'>View</a></td>";
+      echo "      <td><a href='$spotifyLink'><img src='$spotifyButton' class='mini-img spotify'/>Listen</a></td>";
       echo "    </tr>";
     }
 

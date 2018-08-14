@@ -32,12 +32,13 @@
   <head>
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/app.css">
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/login.css">
   </head>
   <body>
-    <div class="container">
-      <h1>Login</h1>
-
-      <div class="row justify-content-md-center">
+    <div class="login-page">
+      <h1 class="muusic">MUUSIC</h1>
+      <div class="row justify-content-md-center login-form">
         <?php
           displayLoginForm($loginErrors);
         ?>

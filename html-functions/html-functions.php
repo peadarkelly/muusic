@@ -4,4 +4,5 @@
   include_once('login-html.php');
   include_once('reviews-html.php');
   include_once('songs-html.php');
+  include_once('util-html.php');
 ?>

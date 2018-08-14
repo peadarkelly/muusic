@@ -2,30 +2,23 @@
   function displayLoginForm($errors) {
     $inputClass = '';
 
-    echo "<div class='row'>";
+    echo "<h1 class='col-md-12'>SIGN IN</h1>";
 
-    if (count($errors) > 0) {
-      $inputClass = 'is-invalid';
+    echo "<form method='POST' action='" . $_SERVER['PHP_SELF'] . "' class='col-md-4'>";
+    echo "  <div class='form-group'>";
 
-      echo "<div class='alert alert-danger col-md-12' role='alert'>";
-      echo "  " . $errors['invalid'];
-      echo "</div>";
+    if ($errors['invalid']) {
+      echo "  <div class='invalid-feedback'>" . $errors['invalid'] . "</div>";
     }
 
-    echo "<form method='POST' action='" . $_SERVER['PHP_SELF'] . "' class='col-md-12'>";
-    echo "  <div class='form-group'>";
-    echo "    <label for='email'>Email</label>";
-    echo "    <input id='email' type='text' name='email' class='form-control $inputClass'/>";
+    echo "    <input id='email' type='text' name='email' class='form-control' placeholder='EMAIL'/>";
     echo "  </div>";
 
     echo "  <div class='form-group'>";
-    echo "    <label for='password'>Password</label>";
-    echo "    <input id='password' type='password' name='password' class='form-control $inputClass'/>";
+    echo "    <input id='password' type='password' name='password' class='form-control' placeholder='PASSWORD'/>";
     echo "  </div>";
 
-    echo "  <input type='submit' name='submit' class='btn btn-primary btn-lg btn-block'/>";
+    echo "  <input type='submit' name='submit' value='SUBMIT' class='btn btn-success btn-lg btn-block'/>";
     echo "</form>";
-
-    echo "</div>";
   }
 ?>

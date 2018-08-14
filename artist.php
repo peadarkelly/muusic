@@ -20,11 +20,13 @@
     <div class="row">
       <div class="col-md-3 details-panel">
         <div class="container">
+          <h1 class="mini-muusic">MUUSIC</h1>
           <p>
             <a href="artists.php">Back to artists</a>
           </p>
           <?php
             displayArtistDetails($artist);
+            displayUserAndSearch();
           ?>
         </div>
       </div>
@@ -32,7 +34,7 @@
       <div class="col-md-7 content-panel">
         <div class="container">
           <h1>Albums</h1>
-          <hr/>
+          <hr class='thick'/>
 
           <div class="row">
             <?php

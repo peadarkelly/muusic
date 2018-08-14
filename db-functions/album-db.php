@@ -23,6 +23,17 @@
     return $result->fetch_assoc();
   }
 
+  function searchAlbums($searchTerm) {
+    $conn = connectDb();
+
+    $query = "select * from albums where title like '%$searchTerm%'";
+    $result = $conn->query($query);
+
+    $conn->close();
+
+    return db_result_to_array($result);
+  }
+
   function createAlbum($albumForm) {
     $conn = connectDb();
 

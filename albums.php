@@ -3,20 +3,13 @@
 
   session_start();
 
-  $artists = fetchArtists();
-
-  function fetchArtists() {
-    if ($_GET['search']) {
-      return searchArtists($_GET['search']);
-    } else {
-      return getArtists();
-    }
-  }
+  $albums = searchAlbums($_GET['search']);
 ?>
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Artists</title>
+    <title>Albums</title>
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/app.css">
   </head>
@@ -25,6 +18,9 @@
       <div class="col-md-3 details-panel">
         <div class="container">
           <h1 class="mini-muusic">MUUSIC</h1>
+          <p>
+            <a href="artists.php">Back to all artists</a>
+          </p>
           <?php
             displayUserAndSearch();
           ?>
@@ -33,12 +29,12 @@
 
       <div class="col-md-7 content-panel">
         <div class="container">
-          <h1>Artists</h1>
+          <h1>Albums</h1>
           <hr class='thick'/>
 
           <div class="row">
             <?php
-              displayArtists($artists);
+              displayAlbums($albums);
             ?>
           </div>
         </div>

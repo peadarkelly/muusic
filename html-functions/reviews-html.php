@@ -1,19 +1,23 @@
 <?php
   function displayReviews($reviews) {
-    foreach ($reviews as $review) {
-      $title = $review['title'];
-      $body = $review['body'];
-      $rating = $review['rating'];
-      $email = $review['email'];
+    if (count($reviews) === 0) {
+      echo "<p>No reviews added yet</p>";
+    } else {
+      foreach ($reviews as $review) {
+        $title = $review['title'];
+        $body = $review['body'];
+        $rating = $review['rating'];
+        $email = $review['email'];
 
-      echo "<div class='card'>";
-      echo "  <div class='card-body'>";
-      echo "    <h5 class='card-title'>$rating/10 - $title</h5>";
-      echo "    <p class='card-text'>$body</p>";
-      echo "    <footer class='blockquote-footer'><cite title='User'>$email</cite></footer>";
-      echo "  </div>";
+        echo "<div class='card'>";
+        echo "  <div class='card-body'>";
+        echo "    <h5 class='card-title'>$rating/10 - $title</h5>";
+        echo "    <p class='card-text'>$body</p>";
+        echo "    <footer class='blockquote-footer'><cite title='User'>$email</cite></footer>";
+        echo "  </div>";
 
-      echo "</div>";
+        echo "</div>";
+      }
     }
   }
 

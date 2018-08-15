@@ -4,6 +4,7 @@
   session_start();
 
   $thumbnail = $_FILES['thumbnail'];
+  $referer = $_GET['referer'];
 
   var_dump($thumbnail);
 
@@ -15,5 +16,5 @@
 
   move_uploaded_file($tempLocation, $newLocation);
 
-  header("Location: http://localhost:8888/muusic/add-artist.php?uploaded-thumbnail=$thumbnailName");
+  header("Location: http://localhost:8888/muusic/$referer?uploaded-thumbnail=$thumbnailName");
 ?>

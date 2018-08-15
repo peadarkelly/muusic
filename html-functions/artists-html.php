@@ -1,4 +1,6 @@
 <?php
+  include_once('thumbnail-html.php');
+
   function displayArtists($artists) {
     foreach ($artists as $artist) {
       $id = $artist['artist_id'];
@@ -26,7 +28,7 @@
   function displayCreateArtistForm($errors, $thumbnail) {
     $nameClass = '';
 
-    echo "<form method='POST' action='upload.php' enctype='multipart/form-data'>";
+    echo "<form method='POST' action='upload.php?referer=add-artist.php' enctype='multipart/form-data'>";
     echo "  <div class='form-group'>";
     echo "    <label for='thumbnail'>Artist thumbnail</label>";
 
@@ -51,27 +53,5 @@
 
     echo "  <input type='submit' name='submit' value='Create artist' class='btn btn-success btn-lg btn-block'/>";
     echo "</form>";
-  }
-
-  function handleThumbnail($errors, $isThumbnailUploaded) {
-    if ($isThumbnailUploaded) {
-      echo "  <div class='valid-feedback'>Thumbnail uploaded</div>";
-    } else {
-      echo "<div class='row'>";
-      echo "  <div class='col-md-5'>";
-
-      if ($errors['thumbnail']) {
-        echo "  <div class='invalid-feedback'>" . $errors['thumbnail'] . "</div>";
-      }
-
-      echo "    <input id='thumbnail' type='file' name='thumbnail' accept='image/*' class='form-control-file'/>";
-      echo "    <small class='form-text text-muted'>Please upload an image for the artist</small>";
-      echo "  </div>";
-
-      echo "  <div class='col-md-4'>";
-      echo "    <input type='submit' name='submit' value='Upload thumbnail' class='btn btn-success'/>";
-      echo "  </div>";
-      echo "</div>";
-    }
   }
 ?>

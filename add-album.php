@@ -2,12 +2,34 @@
   include_once('muusic-functions.php');
 
   session_start();
+
+  $thumbnail = $_GET['uploaded-thumbnail'];
+
+  $artists = getArtists();
+
+  $albumErrors = array();
+
+  if (isset($_POST['submit'])) {
+    $albumForm = array(
+      'title' => $_POST['title'],
+      'releaseDate' => $_POST['release-date'],
+      'thumbnail' => $_POST['thumbnail'],
+      'artistId' => $_POST['artist-id'],
+    );
+
+    $albumErrors = validateAlbumForm($albumForm);
+
+    if (count($albumErrors) === 0) {
+      createAlbum($albumForm);
+      header("Location: http://localhost:8888/muusic/admin.php");
+    }
+  }
 ?>
 
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Admin</title>
+    <title>Add an album</title>
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/app.css">
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/admin.css">
@@ -18,7 +40,7 @@
         <div class="container">
           <h1 class="mini-muusic">MUUSIC</h1>
           <p>
-            <a href="artists.php">Back to all artists</a>
+            <a href="admin.php">Back to admin</a>
           </p>
           <?php
             displayUserAndSearch();
@@ -28,18 +50,12 @@
 
       <div class="col-md-7 content-panel">
         <div class="container">
-          <h1>Administration</h1>
+          <h1>Administration - Add an album</h1>
           <hr class='thick'/>
 
-          <a href="add-artist.php" class="admin-btn">
-            <input type='submit' name='submit' value='Add an artist' class='btn btn-success btn-lg btn-block'/>
-          </a>
-          <a href="add-album.php" class="admin-btn">
-            <input type='submit' name='submit' value='Add an album' class='btn btn-success btn-lg btn-block'/>
-          </a>
-          <a href="add-song.php" class="admin-btn">
-            <input type='submit' name='submit' value='Add a song' class='btn btn-success btn-lg btn-block'/>
-          </a>
+          <?php
+            displayCreateAlbumForm($albumErrors, $thumbnail, $artists);
+          ?>
         </div>
       </div>
     </div>

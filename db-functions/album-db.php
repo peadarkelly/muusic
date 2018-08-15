@@ -37,6 +37,13 @@
   function createAlbum($albumForm) {
     $conn = connectDb();
 
+    $query = "INSERT INTO albums (title, release_date, thumbnail, artist_id) VALUES (?, ?, ?, ?)";
+
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("sdsi", $albumForm["title"], $albumForm["releaseDate"], $albumForm["thumbnail"], $albumForm["artistId"]);
+    $stmt->execute();
+    $stmt->close();
+
     $conn->close();
   }
 ?>

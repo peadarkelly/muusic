@@ -1,0 +1,10 @@
+.admin-btn {
+  width: 100%;
+  margin-bottom: 16px;
+  text-decoration: none !important;
+}
+
+.valid-feedback {
+  display: block;
+  font-weight: bold;
+}

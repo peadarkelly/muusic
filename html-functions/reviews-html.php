@@ -55,7 +55,7 @@
     echo "    <textarea rows='2' id='body' type='text' name='body' class='form-control $bodyClass'></textarea>";
     echo "  </div>";
 
-    echo "  <input type='submit' name='submit' class='btn btn-primary btn-lg btn-block'/>";
+    echo "  <input type='submit' name='submit' value='Submit review' class='btn btn-primary btn-lg btn-block'/>";
     echo "</form>";
   }
 ?>

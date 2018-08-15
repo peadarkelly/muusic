@@ -37,6 +37,13 @@
   function createArtist($artistForm) {
     $conn = connectDb();
 
+    $query = "INSERT INTO artists (name, thumbnail) VALUES (?, ?)";
+
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("ss", $artistForm["name"], $artistForm["thumbnail"]);
+    $stmt->execute();
+    $stmt->close();
+
     $conn->close();
   }
 ?>

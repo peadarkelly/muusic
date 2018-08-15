@@ -2,10 +2,15 @@ body, html {
   height: 100%;
 }
 
-.mini-muusic {
-  font-size: 50px;
+.muusic {
+  font-size: 100px;
   text-align: center;
   font-weight: 900;
+  text-decoration: underline;
+}
+
+.muusic.mini-muusic {
+  font-size: 50px;
 }
 
 .no-margin {

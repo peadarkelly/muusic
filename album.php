@@ -41,7 +41,7 @@
     <div class="row">
       <div class="col-md-3 details-panel">
         <div class="container">
-          <h1 class="mini-muusic">MUUSIC</h1>
+          <h1 class="muusic mini-muusic">MUUSIC</h1>
           <p>
             <?php echo "<a href='artist.php?artistId=" . $album['artist_id'] . "'>Back to artist</a>"; ?>
           </p>

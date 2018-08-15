@@ -34,7 +34,7 @@
     <div class="row">
       <div class="col-md-3 details-panel">
         <div class="container">
-          <h1 class="mini-muusic">MUUSIC</h1>
+          <h1 class="muusic mini-muusic">MUUSIC</h1>
           <p>
             <a href="admin.php">Back to admin</a>
           </p>

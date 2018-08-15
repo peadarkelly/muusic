@@ -7,8 +7,6 @@
 
   $songErrors = array();
 
-  var_dump($_POST);
-
   if (isset($_POST['submit'])) {
     $songForm = array(
       'title' => $_POST['title'],

@@ -55,7 +55,7 @@
     echo "    <label for='spotify-link'>Spotify link</label>";
 
     if ($errors['spotifyLink']) {
-      $releaseDateClass = 'is-invalid';
+      $spotifyLinkClass = 'is-invalid';
       echo "  <div class='invalid-feedback'>" . $errors['spotifyLink'] . "</div>";
     }
 

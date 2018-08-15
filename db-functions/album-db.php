@@ -12,6 +12,17 @@
     return db_result_to_array($result);
   }
 
+  function getAlbumsWithArtistInfo() {
+    $conn = connectDb();
+
+    $query = "select * from albums al join artists ar on al.artist_id = ar.artist_id";
+    $result = $conn->query($query);
+
+    $conn->close();
+
+    return db_result_to_array($result);
+  }
+
   function getAlbum($albumId) {
     $conn = connectDb();
 

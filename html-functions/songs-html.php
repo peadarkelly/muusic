@@ -34,4 +34,46 @@
     echo "  <img src='$thumbnail' class='col-md-12'/>";
     echo "</div>";
   }
+
+  function displayCreateSongForm($errors, $albums) {
+    $titleClass = '';
+    $spotifyLinkClass = '';
+
+    echo "<form method='POST' action='" . $_SERVER['PHP_SELF'] . "'>";
+    echo "  <div class='form-group'>";
+    echo "    <label for='title'>Song title</label>";
+
+    if ($errors['title']) {
+      $titleClass = 'is-invalid';
+      echo "  <div class='invalid-feedback'>" . $errors['title'] . "</div>";
+    }
+
+    echo "    <input id='title' type='text' name='title' class='form-control $titleClass'/>";
+    echo "  </div>";
+
+    echo "  <div class='form-group'>";
+    echo "    <label for='spotify-link'>Spotify link</label>";
+
+    if ($errors['spotifyLink']) {
+      $releaseDateClass = 'is-invalid';
+      echo "  <div class='invalid-feedback'>" . $errors['spotifyLink'] . "</div>";
+    }
+
+    echo "    <input id='spotify-link' type='text' name='spotify-link' class='form-control $spotifyLinkClass'/>";
+    echo "  </div>";
+
+    echo "  <div class='form-group'>";
+    echo "    <label for='album-id'>Album</label>";
+    echo "    <select name='album-id' class='form-control'/>";
+
+    foreach ($albums as $album) {
+      echo "    <option value='" . $album['album_id'] . "'>" . $album['name'] . " - " . $album['title'] . "</option>";
+    }
+
+    echo "    </select>";
+    echo "  </div>";
+
+    echo "  <input type='submit' name='submit' value='Create song' class='btn btn-success btn-lg btn-block'/>";
+    echo "</form>";
+  }
 ?>
